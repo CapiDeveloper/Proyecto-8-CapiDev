@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+*{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: black;
+}
+ul{
+    list-style: none;
+    padding-left: 0;
+}
+a{
+    text-decoration: none;
+    color: #f1f1f1;
+    font-weight: bold;
+    font-size: 18px;
+}
+img{
+    width: 100%;
+}
+/* Contenedor - del banner */
+.contenedor{
+    display: none;
+}
+/* Menu - contiene la parte superior */
+.menu{
+    width: 95%;
+    margin-inline:auto;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+@media (min-width:768px) {
+    .menu{
+        flex-direction: row;
+        align-items: center;
+    }
+}
+/* Logo */
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 10px;
+}
+.logo--nombre{
+    color: #f1f1f1;
+    font-weight: bold;
+    font-size: 20px;
+}
+.logo--nombre span{
+    color: rgb(248,194,0);
+}
+@media (min-width:768px) {
+    .logo--nombre{
+        font-size: 30px;
+    }
+}
+.logo img{
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+}
+@media (min-width:768px) {
+    .logo img{
+        display: none;
+    }
+}
+/* Contenedor de la navegacion */
+.menu--navegacion{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 70px;
+    display: none;
+}
+@media (min-width:768px) {
+    .menu--navegacion{
+        position: static;
+        width: auto;
+    }
+}
+/* Contenedor lista navegacion */
+.navegacion{
+    background-color: red;
+    padding: 10px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    position: relative;
+    z-index: 1;
+}
+@media (min-width:768px) {
+    .navegacion{
+        flex-direction: row;
+        gap: 20px;
+    }
+}
+.navegacion li{
+    width: 100%;
+    text-align: center;
+}
+.navegacion li a{
+    display: block;
+    padding: 10px;
+}
+.navegacion li:last-of-type{
+    width: auto;
+}
+.navegacion li a:hover{
+    background-color: rgb(248,194,0);
+}
+.navegacion li:last-of-type:hover{
+    background-color: transparent;
+}
+/* Formulario - lupa y el input */
+.formulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: rgb(62,62,62);
+    padding: 5px;
+    border-radius: 10px;
+}
+.formulario label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+}
+.formulario input{
+    color: white;
+    padding: 5px;
+    background-color: transparent;
+}
+/* Clase para que aparezca el contenido */
+.resposive--dinamico{
+    display: block;
+}
+/* Contenedor Banner */
+.universo{
+    background-image: linear-gradient(to bottom, black 0%, rgba(0,0,0,0.62)50%, black 100%), url('../img/universo.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 95vh;
+    overflow: hidden;
+}
+.contenedor--universo{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 95vh;
+}
+@media (min-width:768px) {
+    .contenedor--universo{
+        flex-direction: row;
+    }
+}
+.universo--info{
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+@media (min-width:768px) {
+    .universo--info{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
+}
+.btn--info{
+margin-top: 30px;
+}
+.btn--info a{
+    background-color: rgb(248,194,0);
+    border: 2px solid rgb(248,194,0);
+    border-radius: 10px;
+    padding: 10px;
+    color: black;
+}
+.btn--info a:hover{
+    background-color: transparent;
+    color: white;
+}
+/* Planetas- animacion */
+.planetas{
+    width: 80%;
+    height: 70%;
+    position: relative;
+}
+.planetas img{
+    position: absolute;
+    max-width: 215px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+}
+@media (min-width:768px) {
+    .planetas img{
+        margin-block: auto;
+        margin-inline-start:auto;
+        max-width: 400px;
+    }
+}
+@media (min-width:1024px) {
+    .planetas img{
+        max-width: 500px;
+    }
+}
+.planetas li:nth-child(odd) img{
+    animation: rotacionImpar 10s linear infinite;
+}
+.planetas li:nth-child(even) img{
+    animation: rotacionPar 10s linear infinite;
+}
+.planetas li:nth-child(1) img{
+    animation: rotacionSol 50s linear infinite;
+}
+@keyframes rotacionSol {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+@keyframes rotacionImpar {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+@keyframes rotacionPar {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+/* Scroll infinito */
+.contenedor--planetas{
+    padding-top: 40px;
+    padding-bottom: 10px;
+    display: none;
+}
+.lista--planetas{
+    width: 95%;
+    margin: auto;
+    display: flex;
+    gap: 10px;
+    overflow: hidden;
+}
+.lista--planetas::-webkit-scrollbar{
+    width: 0;
+}
+.lista--planetas li{
+    width: 200px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: rgb(32,32,32);
+    transition: background-color .5s ease-in;
+}
+.lista--planetas li:hover{
+    background-color: rgb(248,194,0);
+    cursor: pointer;
+}
+.lista--planetas li img{
+    width: 100px;
+}
+.lista--planetas p{
+    color: #f1f1f1;
+    font-weight: bold;
+}
+.lista--planetas li{
+    animation: scrollInfinito 15s linear infinite;
+}
+@keyframes scrollInfinito{
+    0%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(calc(-210px * 6));
+    }
+}
+
+/* Spinner */
+.lds-ripple {
+    display: flex;
+    position: relative;
+    margin: auto;
+    width: 100%;
+    height: 100vh;
+  }
+  .lds-ripple div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    border: 4px solid rgb(248,194,0);
+    opacity: 1;
+    border-radius: 50%;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  }
+  .lds-ripple div:nth-child(2) {
+    animation-delay: -0.5s;
+  }
+  @keyframes lds-ripple {
+    0% {
+      top: 36px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+    4.9% {
+      top: 36px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+    5% {
+      top: 36px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      opacity: 1;
+    }
+    100% {
+      top: 0px;
+      left: 0px;
+      width: 72px;
+      height: 72px;
+      opacity: 0;
+    }
+  }
